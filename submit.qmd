@@ -74,6 +74,19 @@ microbenchmark::microbenchmark(
 
 
 ```
+Microbench mark output shows both alt functions are fasters than there counterpart function.
+```{r}
+microbenchmark::microbenchmark(
+  fun1(dat),
+  fun1alt(dat)
+)
+
+# Test for the second
+microbenchmark::microbenchmark(
+  fun2(dat),
+  fun2alt(dat)
+)
+```
 
 
 
@@ -191,7 +204,7 @@ GROUP BY rating
 Question 4
 What is the average replacement cost and rental rate for each rating category?
 
-Averages are in the results below
+Averges are in the results below
 ```{sql, connection=con}
 SELECT rating,
 AVG(replacement_cost) AS avg_replacement_cost,
